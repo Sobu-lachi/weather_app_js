@@ -1,0 +1,89 @@
+body{
+    background-color: black;
+    text-align: center;
+    /* display: flex; */
+    justify-content: center; 
+    padding-top: 70px;
+    /* align-content: center; */
+}
+.container{
+    /* position: relative; */
+    max-width: 30%;
+    height: 400px;
+    margin: auto;
+    padding: 10px;
+    padding-top: 30px;
+    /* background-color: cyan; */
+    background-image: linear-gradient(130deg, rgb(0, 255, 195), rgb(24, 10, 96));
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+#error-message-container{
+    background-color: rgba(249, 205, 205, 0.64);
+    color: rgb(254, 5, 5);
+    padding: 3px;
+    border-radius: 10px;
+    display: none;
+    border:solid 1px rgb(63, 3, 3);
+}
+
+#city-input{
+    width: 80%;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    /* margin-top: 20px; */
+}
+
+.search-box{
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchicon{
+    width: 15px;
+    height: 20px;
+}
+
+#search-btn{
+    /* padding: 8px; */
+    border-radius: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.weather-result{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+
+#city, #humidity, #wind-speed{
+    font-size: 24px;
+    font-weight:500;
+    color: white;
+    margin-top: 0px;
+}
+
+ #temp{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+ }
+
+ .weather-details{
+    display: flex;
+    gap: 20px;
+ }
