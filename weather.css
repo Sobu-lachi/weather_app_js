@@ -3,7 +3,7 @@ body{
     text-align: center;
     /* display: flex; */
     justify-content: center; 
-    padding-top: 70px;
+    padding-top: 30px;
     /* align-content: center; */
 }
 .container{
@@ -12,7 +12,7 @@ body{
     height: 400px;
     margin: auto;
     padding: 10px;
-    padding-top: 30px;
+    padding-top: 20px;
     /* background-color: cyan; */
     background-image: linear-gradient(130deg, rgb(0, 255, 195), rgb(24, 10, 96));
     box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
@@ -20,6 +20,8 @@ body{
 }
 
 #error-message-container{
+    margin-bottom: 20px;
+    margin-top: 0px;
     background-color: rgba(249, 205, 205, 0.64);
     color: rgb(254, 5, 5);
     padding: 3px;
@@ -31,7 +33,7 @@ body{
 #city-input{
     width: 80%;
     padding: 8px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     /* margin-top: 20px; */
 }
