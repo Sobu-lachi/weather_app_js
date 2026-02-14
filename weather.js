@@ -8,7 +8,15 @@ const weatherIcon = document.getElementById("weather-icon");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("wind-speed");
 
-// errorMessageContainer.style.display = "block";
+
+function returnWeather(){
+    return JSON.parse(localStorage.getItem("previousweatherdata")||"[]");
+}
+
+function addToLocalstorage(item){
+    localStorage.setItem("previousweatherdata", JSON.stringify(item))
+}
+
 
 searchButton.addEventListener("click", () => {
     const city = cityInput.value.trim();
@@ -25,13 +33,20 @@ async function fetchWeather(city) {
     try {
     const response = await fetch(`https://api.weatherbit.io/v2.0/current?city=${city}&key=97aefab766c848718f74f05c53b5b7ab`);
     let data = await response.json();
-    weatherData = data.data[0];
+    const weatherData = data.data[0];
+    
+    const previousweatherdata = returnWeather()
+    
+    const newdata = {
+        cityName:weatherData.city_name,
+        temp:`${Math.round(weatherData.temp)}°C`,
+        humidity: weatherData.rh,
+        windSpeed: weatherData.wind_spd,
+        weatherIcon:`https://www.weatherbit.io/static/img/icons/${weatherData.weather.icon}.png`
+    };
 
-    cityName.innerHTML = weatherData.city_name;
-    temperature.innerHTML = `${Math.round(weatherData.temp)}°C`;
-    humidity.innerHTML =  weatherData.rh;
-    windSpeed.innerHTML = weatherData.wind_spd;
-    weatherIcon.src =`https://www.weatherbit.io/static/img/icons/${weatherData.weather.icon}.png`;
+    previousweatherdata.push(newdata);
+    addToLocalstorage(previousweatherdata)
 
     } catch (error) {
         ErrorMessage("City not found. Please try again.");
@@ -46,3 +61,24 @@ function ErrorMessage(message){
     }, 2000);
 
 }
+
+
+function renderWeather(data){
+    cityName.innerHTML = data.cityName;
+    temperature.innerHTML = data.temp;
+    humidity.innerHTML =  data.humidity;
+    windSpeed.innerHTML = data.windSpeed;
+    weatherIcon.src = data.weatherIcon;
+}
+
+function printDataToScreen(){
+    const data = returnWeather();
+    data.forEach(
+        renderWeather
+    );
+}
+
+printDataToScreen();
+
+
+/// Pattern Fetch Store Render
