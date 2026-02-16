@@ -7,12 +7,14 @@ body{
     /* align-content: center; */
 }
 .container{
-    max-width: 30%;
+    /* width: 30%; */
+    max-width: 420px;
+    min-width: 320px;
     height: 400px;
     margin: auto;
     padding: 10px;
     padding-top: 20px;
-    /* position: relative; */
+    position: relative;
     /* background-color: cyan; */
     background-image: linear-gradient(130deg, rgb(0, 255, 195), rgb(24, 10, 96));
     box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
@@ -22,13 +24,13 @@ body{
 #error-message-container{
     background-color: rgba(255, 255, 255, 0.713);
     color: rgb(254, 5, 5);
-    width: 390px; /*200*/
+    width: 90%; /*200*/
     height: 40px;
     padding: 2px;
     border-radius: 10px;
     display: none;
-    position: fixed;
-    bottom: 80px;
+    position: absolute;
+    bottom: 10px;
     border:solid 0px rgb(63, 3, 3);
     align-content: center;
 }
@@ -107,3 +109,232 @@ body{
     position: relative;
     top: 15px;
 }   
+
+/* Responsive UI */
+
+ /* and (max-height:914px) */
+@media screen and (max-width:600px){
+    body{
+    background-color: black;
+    text-align: center;
+    margin: 0;
+    /* display: flex; */
+    justify-content: center; 
+    padding: 0px;
+    align-content: center;
+}
+    .container{
+    max-width: 100%;
+    /* height: 667px; */
+    height: 100vh;
+    padding: 10px;
+    padding-top: 50px;
+    position: relative;
+    background-image: linear-gradient(130deg, rgb(0, 255, 195), rgb(24, 10, 96));
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    border-radius: 0px;
+}
+
+#error-message-container{
+    background-color: rgba(255, 255, 255, 0.713);
+    color: rgb(254, 5, 5);
+    width: 95%; /*200*/
+    height: 40px;
+    padding: 2px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 85vh;
+    border:solid 0px rgb(63, 3, 3);
+    align-content: center;
+}
+
+#city-input{
+    width: 85%;
+    height: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    /* margin-top: 20px; */
+}
+
+.search-box{
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchicon{
+    width: 15px;
+    height: 20px;
+}
+
+#search-btn{
+    padding: 8px;
+    border-radius: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.weather-result{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#city, #humidity, #wind-speed{
+    font-size: 25px;
+    font-weight:500;
+    color: white;
+    margin-top: 0px;
+}
+
+ #temp{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+ }
+
+ .weather-details{
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    /* align-items: center; */
+ }
+
+.wind-speed, .humidity{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    gap: 10px;
+}
+
+.fa-solid{
+    position: relative;
+    top: 15px;
+}   
+    
+}
+
+@media screen and (min-width: 601px) and (max-width:1024px){
+    body{
+    background-color: black;
+    text-align: center;
+    margin: 0;
+    justify-content: center; 
+    padding: 0px;
+    align-content: center;
+}
+    .container{
+    max-width: 100%;
+    height: 100vh;
+    padding: 10px;
+    padding-top: 70px;
+    position: relative;
+    background-image: linear-gradient(130deg, rgb(0, 255, 195), rgb(24, 10, 96));
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    border-radius: 0px;
+}
+
+#error-message-container{
+    background-color: rgba(255, 255, 255, 0.713);
+    color: rgb(254, 5, 5);
+    width: 95%; 
+    height: 70px;
+    padding: 2px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 85vh;
+    border:solid 0px rgb(63, 3, 3);
+    align-content: center;
+}
+
+#error-message{
+    font-size: 24px;
+}
+
+#city-input{
+    width: 85%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchicon{
+    width: 15px;
+    height: 20px;
+}
+
+#search-btn{
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.weather-result{
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#city, #humidity, #wind-speed{
+    font-size: 40px;
+    font-weight:500;
+    color: white;
+    margin-top: 0px;
+}
+
+ #temp{
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+ }
+
+ .weather-details{
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+ }
+
+.wind-speed, .humidity{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.fa-solid{
+    position: relative;
+    top: 15px;
+}  
+}
+
