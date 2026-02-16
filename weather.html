@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App </title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=airwave" />
 </head>
 
 <body>
     <div class="container">
-        <div id="error-message-container">
-            <p id="error-message">Error</p>
-        </div>
         <div class="search-box">
             <input type="text" id="city-input" placeholder="Enter city name" spellcheck="false">
-            <button id="search-btn"><img id="searchicon"src="image/searchicon.png" alt=""></button>
+            <button id="search-btn"><img id="searchicon" src="image/searchicon.png" alt=""></button>
         </div>
         <div id="weather-result" class="weather-result">
             <img id="weather-icon" src="" alt="">
@@ -24,15 +23,22 @@
             <p id="city"></p>
 
             <div class="weather-details">
-            <p id="humidity"></p>
-            <p id="wind-speed"></p>
+                <!-- <img id="humidity-icon" src="image/humidity.png" alt="humidity image"> -->
+                <span class="material-symbols-outlined">airwave</span>
+                <p id="humidity"></p>
+                <!-- <img id="wind-icon" src="image/wind.png" alt="wind image"> -->
+                <span class="material-symbols-outlined">air</span>
+                <p id="wind-speed"></p>
 
             </div>
 
         </div>
+        <dialog id="error-message-container">
+            <span id="error-message">Error</span>
+        </dialog>
+    </div>
 
-
-        <script src="weather.js"></script>
+    <script src="weather.js"></script>
 </body>
 
 </html>

@@ -25,6 +25,7 @@ searchButton.addEventListener("click", () => {
         return;
     };
     fetchWeather(city);
+    // renderWeather()
     cityInput.value = "";
 });
 
@@ -34,19 +35,20 @@ async function fetchWeather(city) {
     const response = await fetch(`https://api.weatherbit.io/v2.0/current?city=${city}&key=97aefab766c848718f74f05c53b5b7ab`);
     let data = await response.json();
     const weatherData = data.data[0];
-    
+    console.log(data);
     const previousweatherdata = returnWeather()
     
     const newdata = {
         cityName:weatherData.city_name,
         temp:`${Math.round(weatherData.temp)}°C`,
-        humidity: weatherData.rh,
-        windSpeed: weatherData.wind_spd,
+        humidity: `${weatherData.rh}%`,
+        windSpeed: `${weatherData.wind_spd} km/h`,
         weatherIcon:`https://www.weatherbit.io/static/img/icons/${weatherData.weather.icon}.png`
     };
 
     previousweatherdata.push(newdata);
-    addToLocalstorage(previousweatherdata)
+    addToLocalstorage(previousweatherdata);
+    renderWeather(newdata);
 
     } catch (error) {
         ErrorMessage("City not found. Please try again.");
@@ -55,10 +57,11 @@ async function fetchWeather(city) {
 
 function ErrorMessage(message){
     errorMessageContainer.style.display = "block";
+    // errorMessageContainer.showModal();
     errorMessage.textContent = message;
     setTimeout(() => {
         errorMessageContainer.style.display = "none";
-    }, 2000);
+    }, 1000);
 
 }
 
