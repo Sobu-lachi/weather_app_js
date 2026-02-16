@@ -29,6 +29,18 @@ searchButton.addEventListener("click", () => {
     cityInput.value = "";
 });
 
+document.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        const city = cityInput.value.trim();
+        if (city === "") {
+            ErrorMessage("Please enter a city name.");
+            return;
+        };
+        fetchWeather(city);
+        cityInput.value = "";
+    }
+});
+
 
 async function fetchWeather(city) {
     try {
