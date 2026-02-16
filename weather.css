@@ -20,7 +20,7 @@ body{
 }
 
 #error-message-container{
-    background-color: rgba(249, 205, 205, 0.64);
+    background-color: rgba(255, 255, 255, 0.713);
     color: rgb(254, 5, 5);
     width: 390px; /*200*/
     height: 40px;
@@ -55,7 +55,7 @@ body{
 }
 
 #search-btn{
-    /* padding: 8px; */
+    padding: 8px;
     border-radius: 100px;
     border: none;
     background-color: white;
@@ -89,10 +89,21 @@ body{
  }
 
  .weather-details{
+    margin-top: 10px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    flex-direction: row;
+    /* align-items: center; */
  }
 
- #humidity-icon{
-  filter: hue-rotate(90deg);
+.wind-speed, .humidity{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    gap: 10px;
 }
+
+.fa-solid{
+    position: relative;
+    top: 15px;
+}   
